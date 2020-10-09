@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Project UTS</string>
+    <string name="title">Laundry.in</string>
+    <string name="daftar">Daftar</string>
+    <string name="nama">nama</string>
+    <string name="alamat">alamat</string>
+    <string name="telpon">telepon</string>
+    <string name="berat">berat</string>
+    <string name="tglOrder">Tgl Order</string>
+    <string name="tglAmbil">Tgl Ambil</string>
+    <string name="hargaPerkilo">Per kilo = Rp 5000</string>
+    <string name="status">Status</string>
+
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+</resources>

@@ -52,7 +52,7 @@ public class User extends BaseObservable {
     public void setHarga(int harga) { this.harga = harga; }
 
     @Bindable
-    public String getStrnigHarga() {
+    public String getStringHarga() {
         return String.valueOf(harga);
     }
 

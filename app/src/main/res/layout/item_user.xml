@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:id="@+id/show_layout">
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textTelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textHarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textBerat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textTglorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textTglambil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_marginStart="5dp"
+            android:id="@+id/textStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B3B2B2"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+</androidx.cardview.widget.CardView>

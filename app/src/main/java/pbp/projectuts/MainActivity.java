@@ -44,5 +44,29 @@ public class MainActivity extends AppCompatActivity {
         binding.setActivity(this);
     }
 
+    public View.OnClickListener signin = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
+
+            Gson gson = new Gson();
+            String strMhs = gson.toJson(user);
+            detailActivity.putExtra("objMhs",strMhs);
+            startActivity(detailActivity);
+        }
+    };
+
+    public View.OnClickListener status = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent detailActivity = new Intent(MainActivity.this, DetailActivity.class);
+
+            Gson gson = new Gson();
+            String strMhs = gson.toJson(user);
+            detailActivity.putExtra("objMhs",strMhs);
+            startActivity(detailActivity);
+        }
+    };
+
 
 }

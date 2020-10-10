@@ -10,6 +10,7 @@
             name="activity"
             type="pbp.projectuts.RegisterActivity" />
     </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,7 +24,6 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="30dp"
             android:text="@string/daftar" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,13 +119,7 @@
                 android:layout_marginLeft="80dp"
                 android:text="@string/signin"
                 android:onClick="@{activity.btnSave}"/>
-<!--            <Button-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="-48dp"-->
-<!--                android:layout_marginLeft="230dp"-->
-<!--                android:text="@string/signup"-->
-<!--                android:onClick="@{activity.btnSave}"/>-->
+
         </LinearLayout>
     </RelativeLayout>
 </layout>

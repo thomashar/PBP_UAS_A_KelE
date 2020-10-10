@@ -11,6 +11,7 @@
     <string name="hargaPerkilo">Per kilo = Rp 5000</string>
     <string name="status">Status</string>
     <string name="titleStatus">Riwayat Laundry</string>
+    <string name="foto">Foto anda</string>
 
     <string name="signin">Sign In</string>
     <string name="signup">Sign Up</string>

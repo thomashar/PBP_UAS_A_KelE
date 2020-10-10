@@ -2,18 +2,40 @@ package pbp.projectuts;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class User extends BaseObservable {
+@Entity
+public class User extends BaseObservable implements Serializable {
 
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+
+    @ColumnInfo(name = "nama")
     public String nama;
+
+    @ColumnInfo(name = "telp")
     public String telp;
+
+    @ColumnInfo(name = "harga")
     public int harga;
+
+    @ColumnInfo(name = "berat")
     public double berat;
-    public Date tglOrder,tglAmbil;
+
+    @ColumnInfo(name = "tglOrder")
+    public Date tglOrder;
+
+    @ColumnInfo(name = "tglAmbil")
+    public Date tglAmbil;
+
+    @ColumnInfo(name = "status")
     public String status;
 
     public User() { }
@@ -28,6 +50,13 @@ public class User extends BaseObservable {
         this.tglOrder = tglOrder;
         this.tglAmbil = tglAmbil;
         this.status = status;
+    }
+
+    @Bindable
+    public int getId(){return id;}
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Bindable

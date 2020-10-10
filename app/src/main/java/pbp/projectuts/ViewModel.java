@@ -9,6 +9,14 @@ import java.util.Date;
 public class ViewModel extends BaseObservable {
     private User user;
 
+    @Bindable
+    public int getUserId(){return user.getId();}
+
+    public void setUserId(int id) {
+        user.setId(id);
+        notifyPropertyChanged(BR.id);
+    }
+
 
     @Bindable
     public String getUserNama() {
@@ -21,7 +29,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public String getTelp() {
+    public String getUserTelp() {
         return user.getTelp();
     }
 
@@ -31,7 +39,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public int getHarga() {
+    public int getUserHarga() {
         return user.getHarga();
     }
 
@@ -41,11 +49,11 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public String getStrnigHarga() {
-        return String.valueOf(user.getStrnigHarga());
+    public String getUserStringHarga() {
+        return String.valueOf(user.getStringHarga());
     }
 
-    public void setStringHarga(String harga) {
+    public void setUserStringHarga(String harga) {
         if(!harga.isEmpty()){
             user.setStringHarga(harga);
         } else {
@@ -55,7 +63,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public double getBerat() {
+    public double getUserBerat() {
         return user.getBerat();
     }
 
@@ -65,7 +73,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public String getStringBerat() { return String.valueOf(user.getStringBerat()); }
+    public String getUserStringBerat() { return String.valueOf(user.getStringBerat()); }
 
     public void setUserStringBerat(String berat) throws ParseException {
         if(!berat.isEmpty()){
@@ -77,7 +85,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public Date getTglOrder() {
+    public Date getUserTglOrder() {
         return user.getTglOrder();
     }
 
@@ -87,7 +95,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public String getStringOrder() { return String.valueOf(user.getStringOrder()); }
+    public String getUserStringOrder() { return String.valueOf(user.getStringOrder()); }
 
     public void setUserStringOrder(String tglOrder) throws ParseException {
         if(!tglOrder.isEmpty()){
@@ -99,7 +107,7 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public Date getTglAmbil() {
+    public Date getUserTglAmbil() {
         return user.getTglAmbil();
     }
 

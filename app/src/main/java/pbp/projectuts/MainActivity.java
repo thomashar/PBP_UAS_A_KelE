@@ -1,25 +1,15 @@
 package pbp.projectuts;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.databinding.DataBindingUtil;
-
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.method.PasswordTransformationMethod;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.google.gson.Gson;
+
 import pbp.projectuts.databinding.ActivityMainBinding;
 
 //  kelas buat halaman login
@@ -35,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        regButton = findViewById(R.id.signin);
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         user = new User();
@@ -44,29 +32,47 @@ public class MainActivity extends AppCompatActivity {
         binding.setActivity(this);
     }
 
-    public View.OnClickListener signin = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
+    public void btnSignin(View view) {
+        Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
 
             Gson gson = new Gson();
             String strMhs = gson.toJson(user);
             detailActivity.putExtra("objMhs",strMhs);
             startActivity(detailActivity);
-        }
-    };
+    }
 
-    public View.OnClickListener status = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent detailActivity = new Intent(MainActivity.this, DetailActivity.class);
+    public void btnStatus(View view) {
+        Intent detailActivity = new Intent(MainActivity.this, DetailActivity.class);
 
-            Gson gson = new Gson();
-            String strMhs = gson.toJson(user);
-            detailActivity.putExtra("objMhs",strMhs);
-            startActivity(detailActivity);
-        }
-    };
+        Gson gson = new Gson();
+        String strMhs = gson.toJson(user);
+        detailActivity.putExtra("objMhs",strMhs);
+        startActivity(detailActivity);
+    }
+
+//    public View.OnClickListener signin = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
+//
+//            Gson gson = new Gson();
+//            String strMhs = gson.toJson(user);
+//            detailActivity.putExtra("objMhs",strMhs);
+//            startActivity(detailActivity);
+//        }
+//    };
+
+//    public View.OnClickListener status = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            Intent detailActivity = new Intent(MainActivity.this, DetailActivity.class);
+//
+//            Gson gson = new Gson();
+//            String strMhs = gson.toJson(user);
+//            detailActivity.putExtra("objMhs",strMhs);
+//            startActivity(detailActivity);
+//        }
+//    };
 
 
 }

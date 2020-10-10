@@ -3,9 +3,6 @@ package pbp.projectuts;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
-import java.text.ParseException;
-import java.util.Date;
-
 public class ViewModel extends BaseObservable {
     private User user;
 
@@ -67,7 +64,7 @@ public class ViewModel extends BaseObservable {
         return user.getBerat();
     }
 
-    public void setUserNama(int berat) {
+    public void setUserBerat(int berat) {
         user.setBerat(berat);
         notifyPropertyChanged(BR.berat);
     }
@@ -75,7 +72,7 @@ public class ViewModel extends BaseObservable {
     @Bindable
     public String getUserStringBerat() { return String.valueOf(user.getStringBerat()); }
 
-    public void setUserStringBerat(String berat) throws ParseException {
+    public void setUserStringBerat(String berat) {
         if(!berat.isEmpty()){
             user.setStringBerat(berat);
         } else {
@@ -85,48 +82,46 @@ public class ViewModel extends BaseObservable {
     }
 
     @Bindable
-    public Date getUserTglOrder() {
-        return user.getTglOrder();
-    }
+    public String getUserTglOrder() { return user.getTglOrder(); }
 
-    public void setUserOrder(Date tglOrder) {
+    public void setUserTglOrder(String tglOrder) {
         user.setTglOrder(tglOrder);
         notifyPropertyChanged(BR.tglOrder);
     }
 
-    @Bindable
-    public String getUserStringOrder() { return String.valueOf(user.getStringOrder()); }
+//    @Bindable
+//    public String getUserStringOrder() { return String.valueOf(user.getStringOrder()); }
+//
+//    public void setUserStringOrder(String tglOrder) throws ParseException {
+//        if(!tglOrder.isEmpty()){
+//            user.setStringOrder(tglOrder);
+//        } else {
+//            user.setStringOrder(null);
+//        }
+//        notifyPropertyChanged(BR.tglOrder);
+//    }
 
-    public void setUserStringOrder(String tglOrder) throws ParseException {
-        if(!tglOrder.isEmpty()){
-            user.setStringOrder(tglOrder);
-        } else {
-            user.setStringOrder(null);
-        }
-        notifyPropertyChanged(BR.tglOrder);
-    }
-
     @Bindable
-    public Date getUserTglAmbil() {
+    public String getUserTglAmbil() {
         return user.getTglAmbil();
     }
 
-    public void setUserAmbil(Date tglAmbil) {
+    public void setUserTglAmbil(String tglAmbil) {
         user.setTglAmbil(tglAmbil);
         notifyPropertyChanged(BR.tglAmbil);
     }
 
-    @Bindable
-    public String getUserStringAmbil() { return String.valueOf(user.getStringAmbil()); }
-
-    public void setUserStringAmbil(String tglAmbil) throws ParseException {
-        if(!tglAmbil.isEmpty()){
-            user.setStringAmbil(tglAmbil);
-        } else {
-            user.setStringAmbil(null);
-        }
-        notifyPropertyChanged(BR.tglAmbil);
-    }
+//    @Bindable
+//    public String getUserStringAmbil() { return String.valueOf(user.getStringAmbil()); }
+//
+//    public void setUserStringAmbil(String tglAmbil) throws ParseException {
+//        if(!tglAmbil.isEmpty()){
+//            user.setStringAmbil(tglAmbil);
+//        } else {
+//            user.setStringAmbil(null);
+//        }
+//        notifyPropertyChanged(BR.tglAmbil);
+//    }
 
     @Bindable
     public String getUserStatus() {

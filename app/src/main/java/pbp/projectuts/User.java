@@ -7,9 +7,6 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Entity
 public class User extends BaseObservable implements Serializable {
@@ -30,10 +27,10 @@ public class User extends BaseObservable implements Serializable {
     public double berat;
 
     @ColumnInfo(name = "tglOrder")
-    public Date tglOrder;
+    public String tglOrder;
 
     @ColumnInfo(name = "tglAmbil")
-    public Date tglAmbil;
+    public String tglAmbil;
 
     @ColumnInfo(name = "status")
     public String status;
@@ -41,7 +38,7 @@ public class User extends BaseObservable implements Serializable {
     public User() { }
 
     public User(String nama, String telp, int harga, double berat,
-                Date tglOrder, Date tglAmbil, String status)
+                String tglOrder, String tglAmbil, String status)
     {
         this.nama = nama;
         this.telp = telp;
@@ -112,42 +109,42 @@ public class User extends BaseObservable implements Serializable {
     }
 
     @Bindable
-    public Date getTglOrder() {
+    public String getTglOrder() {
         return tglOrder;
     }
 
-    public void setTglOrder(Date tglOrder) { this.tglOrder = tglOrder; }
+    public void setTglOrder(String tglOrder) { this.tglOrder = tglOrder; }
+
+//    @Bindable
+//    public String getStringOrder() { return String.valueOf(tglOrder); }
+//
+//    public void setStringOrder(String tglOrder) throws ParseException {
+//        if(!tglOrder.isEmpty()){
+////            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglOrder);
+//            this.tglOrder = (tglOrder);
+//        } else {
+//            this.tglOrder = null;
+//        }
+//    }
 
     @Bindable
-    public String getStringOrder() { return String.valueOf(tglOrder); }
-
-    public void setStringOrder(String tglOrder) throws ParseException {
-        if(!tglOrder.isEmpty()){
-            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglOrder);
-            this.tglOrder = (date1);
-        } else {
-            this.tglOrder = null;
-        }
-    }
-
-    @Bindable
-    public Date getTglAmbil() {
+    public String getTglAmbil() {
         return tglAmbil;
     }
 
-    public void setTglAmbil(Date tglAmbil) { this.tglAmbil = tglAmbil; }
+    public void setTglAmbil(String tglAmbil) { this.tglAmbil = tglAmbil; }
 
-    @Bindable
-    public String getStringAmbil() { return String.valueOf(tglAmbil); }
-
-    public void setStringAmbil(String tglAmbil) throws ParseException {
-        if(!tglAmbil.isEmpty()){
-            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglAmbil);
-            this.tglAmbil = (date1);
-        } else {
-            this.tglAmbil = null;
-        }
-    }
+//    @Bindable
+//    public String getStringAmbil() { return String.valueOf(tglAmbil); }
+//
+//    public void setStringAmbil(String tglAmbil) throws ParseException {
+//        if(!tglAmbil.isEmpty()){
+////            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglAmbil);
+//            this.tglAmbil = (tglAmbil);
+//        } else {
+//            this.tglAmbil = null;
+//        }
+//    }
 
     @Bindable
     public String getStatus() {

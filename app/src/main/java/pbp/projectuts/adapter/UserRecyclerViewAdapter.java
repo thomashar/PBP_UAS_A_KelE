@@ -42,8 +42,8 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
         holder.textTelp.setText(user.getTelp());
         holder.textHarga.setText(user.getStringHarga());
         holder.textBerat.setText(user.getStringBerat());
-        holder.textTglorder.setText(user.getStringOrder());
-        holder.textTglambil.setText(user.getStringAmbil());
+        holder.textTglorder.setText(user.getTglOrder());
+        holder.textTglambil.setText(user.getTglAmbil());
         holder.textStatus.setText(user.getStatus());
 
     }

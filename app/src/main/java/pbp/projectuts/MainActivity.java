@@ -47,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
         detailActivity.putExtra("objMhs", strMhs);
         startActivity(detailActivity);
     }
+
+    public void btnLocation(View view) {
+        Intent detailActivity = new Intent(MainActivity.this, MapLocation.class);
+
+        Gson gson = new Gson();
+        String strMhs = gson.toJson(user);
+        detailActivity.putExtra("objMhs", strMhs);
+        startActivity(detailActivity);
+    }
 }
 //    public View.OnClickListener signin = new View.OnClickListener() {
 //        @Override

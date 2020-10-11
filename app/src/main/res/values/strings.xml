@@ -16,4 +16,7 @@
     <string name="btnSave">Save</string>
     <string name="signin">Sign In</string>
     <string name="signup">Sign Up</string>
+    <string name="location">Location</string>
+
+    <string name="mapbox_access_token">pk.eyJ1IjoiZGltYWtlZGEiLCJhIjoiY2tmbzZpeGczMDVoeTJ0bXFyMmtlaDY0eiJ9.sjR29rBIaYc3tz7QMcKKGA</string>
 </resources>

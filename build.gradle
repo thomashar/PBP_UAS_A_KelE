@@ -12,10 +12,35 @@ buildscript {
     }
 }
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven{
+            url 'https://api.mapbox.com/downloads/v2/release/maven'
+            authentication{
+                basic(BasicAuthentication)
+            }
+            credentials{
+                username = 'mapbox'
+                password = project.properties['MAPBOX_DOWNLOAD_TOKEN'] ?: ""
+            }
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.1"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
 allprojects {
     repositories {
         google()
         jcenter()
+        maven{ url 'https://mapbox.bintray.com/mapbox'}
     }
 }
 

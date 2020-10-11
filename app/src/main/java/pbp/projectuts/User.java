@@ -7,6 +7,10 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class User extends BaseObservable implements Serializable {
@@ -115,17 +119,21 @@ public class User extends BaseObservable implements Serializable {
 
     public void setTglOrder(String tglOrder) { this.tglOrder = tglOrder; }
 
-//    @Bindable
-//    public String getStringOrder() { return String.valueOf(tglOrder); }
-//
-//    public void setStringOrder(String tglOrder) throws ParseException {
-//        if(!tglOrder.isEmpty()){
-////            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglOrder);
-//            this.tglOrder = (tglOrder);
-//        } else {
-//            this.tglOrder = null;
-//        }
-//    }
+    @Bindable
+    public Date getDateOrder() throws ParseException {
+        Date dateOrder= new SimpleDateFormat("dd/MM/yyyy").parse(tglOrder);
+        return dateOrder;
+    }
+
+    public void setDateOrder(Date tglOrder) throws ParseException {
+        if(tglOrder != null){
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String dateOrder = df.format(tglOrder);
+            this.tglOrder = dateOrder;
+        } else {
+            this.tglOrder = null;
+        }
+    }
 
     @Bindable
     public String getTglAmbil() {
@@ -134,17 +142,21 @@ public class User extends BaseObservable implements Serializable {
 
     public void setTglAmbil(String tglAmbil) { this.tglAmbil = tglAmbil; }
 
-//    @Bindable
-//    public String getStringAmbil() { return String.valueOf(tglAmbil); }
-//
-//    public void setStringAmbil(String tglAmbil) throws ParseException {
-//        if(!tglAmbil.isEmpty()){
-////            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(tglAmbil);
-//            this.tglAmbil = (tglAmbil);
-//        } else {
-//            this.tglAmbil = null;
-//        }
-//    }
+    @Bindable
+    public Date getDateAmbil() throws ParseException {
+        Date dateAmbil = new SimpleDateFormat("dd/MM/yyyy").parse(tglAmbil);
+        return dateAmbil;
+    }
+
+    public void setDateAmbil(Date tglAmbil) throws ParseException {
+        if(tglAmbil != null){
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String dateAmbil = df.format(tglAmbil);
+            this.tglAmbil = dateAmbil;
+        } else {
+            this.tglAmbil = null;
+        }
+    }
 
     @Bindable
     public String getStatus() {

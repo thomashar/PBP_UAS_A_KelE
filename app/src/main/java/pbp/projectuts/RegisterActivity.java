@@ -6,16 +6,17 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.google.gson.Gson;
 
-//import pbp.projectuts.databinding.ActivityRegisterBinding;
+import pbp.projectuts.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
 
     User user;
     ViewModel viewModel;
-//    ActivityRegisterBinding binding;
+    ActivityRegisterBinding binding;
     private Button regButton;
 //    private FirebaseAuth auth;                buat firebase
 //    private String CHANNEL_ID="Channel 1";    buat firebase
@@ -26,11 +27,11 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 //        auth = FirebaseAuth.getInstance();    buat firebase
 
-//        binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
-//
-//        viewModel = new ViewModel();
-//        binding.setVm(viewModel);
-//        binding.setActivity(this);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_register);
+
+        viewModel = new ViewModel();
+        binding.setVm(viewModel);
+        binding.setActivity(this);
     }
 
 //    public View.OnClickListener btnSave = new View.OnClickListener() {

@@ -3,7 +3,6 @@ package pbp.projectuts;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -17,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
     User user;
     ActivityMainBinding binding;
-    private Button regButton;
 //    private FirebaseAuth auth;                buat firebase
 //    private String CHANNEL_ID="Channel 1";    buat firebase
 
@@ -35,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
     public void btnSignin(View view) {
         Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
 
-            Gson gson = new Gson();
-            String strMhs = gson.toJson(user);
-            detailActivity.putExtra("objMhs",strMhs);
-            startActivity(detailActivity);
+        Gson gson = new Gson();
+        String strMhs = gson.toJson(user);
+        detailActivity.putExtra("objMhs", strMhs);
+        startActivity(detailActivity);
     }
 
     public void btnStatus(View view) {
@@ -46,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         Gson gson = new Gson();
         String strMhs = gson.toJson(user);
-        detailActivity.putExtra("objMhs",strMhs);
+        detailActivity.putExtra("objMhs", strMhs);
         startActivity(detailActivity);
     }
-
+}
 //    public View.OnClickListener signin = new View.OnClickListener() {
 //        @Override
 //        public void onClick(View v) {
@@ -75,4 +73,3 @@ public class MainActivity extends AppCompatActivity {
 //    };
 
 
-}

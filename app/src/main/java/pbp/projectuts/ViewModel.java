@@ -3,6 +3,9 @@ package pbp.projectuts;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
+import java.text.ParseException;
+import java.util.Date;
+
 public class ViewModel extends BaseObservable {
     private User user;
 
@@ -89,17 +92,17 @@ public class ViewModel extends BaseObservable {
         notifyPropertyChanged(BR.tglOrder);
     }
 
-//    @Bindable
-//    public String getUserStringOrder() { return String.valueOf(user.getStringOrder()); }
-//
-//    public void setUserStringOrder(String tglOrder) throws ParseException {
-//        if(!tglOrder.isEmpty()){
-//            user.setStringOrder(tglOrder);
-//        } else {
-//            user.setStringOrder(null);
-//        }
-//        notifyPropertyChanged(BR.tglOrder);
-//    }
+    @Bindable
+    public Date getUserDateOrder() throws ParseException { return user.getDateOrder(); }
+
+    public void setUserDateOrder(Date tglOrder) throws ParseException {
+        if(tglOrder != null){
+            user.setDateOrder(tglOrder);
+        } else {
+            user.setDateOrder(null);
+        }
+        notifyPropertyChanged(BR.tglOrder);
+    }
 
     @Bindable
     public String getUserTglAmbil() {
@@ -111,17 +114,17 @@ public class ViewModel extends BaseObservable {
         notifyPropertyChanged(BR.tglAmbil);
     }
 
-//    @Bindable
-//    public String getUserStringAmbil() { return String.valueOf(user.getStringAmbil()); }
-//
-//    public void setUserStringAmbil(String tglAmbil) throws ParseException {
-//        if(!tglAmbil.isEmpty()){
-//            user.setStringAmbil(tglAmbil);
-//        } else {
-//            user.setStringAmbil(null);
-//        }
-//        notifyPropertyChanged(BR.tglAmbil);
-//    }
+    @Bindable
+    public Date getUserDateAmbil() throws ParseException { return user.getDateAmbil(); }
+
+    public void setUserDateAmbil(Date tglAmbil) throws ParseException {
+        if(tglAmbil != null){
+            user.setDateAmbil(tglAmbil);
+        } else {
+            user.setDateAmbil(null);
+        }
+        notifyPropertyChanged(BR.tglAmbil);
+    }
 
     @Bindable
     public String getUserStatus() {

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "260780172815",
+    "firebase_url": "https://project-uts-6d4da.firebaseio.com",
+    "project_id": "project-uts-6d4da",
+    "storage_bucket": "project-uts-6d4da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260780172815:android:202356bd983993d503a57a",
+        "android_client_info": {
+          "package_name": "pbp.projectuts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260780172815-v9tm9s4squcg1a6l9b6gds0u94qra7fj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXwzr_l7rdODgOKRmt-I2DiICazulgyvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260780172815-v9tm9s4squcg1a6l9b6gds0u94qra7fj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

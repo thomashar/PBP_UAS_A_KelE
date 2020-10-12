@@ -20,6 +20,7 @@
 
     <string name="addfoto">Add Picture</string>
     <string name="opsional">Opsional</string>
+    <string name="laundry">LAUNDRY LOCATION</string>
 
     <string name="mapbox_access_token">pk.eyJ1IjoiZGltYWtlZGEiLCJhIjoiY2tmbzZpeGczMDVoeTJ0bXFyMmtlaDY0eiJ9.sjR29rBIaYc3tz7QMcKKGA</string>
 </resources>

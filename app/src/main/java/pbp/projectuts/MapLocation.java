@@ -133,6 +133,13 @@ public class MapLocation extends AppCompatActivity implements OnMapReadyCallback
             }catch (Exception e){
                 Toast.makeText(this, "Location error!", Toast.LENGTH_SHORT).show();
             }
+//            LocationComponent locationComponent = mapboxMap.getLocationComponent();
+//            locationComponent.activateLocationComponent(LocationComponentActivationOptions.builder(this, loadedMapStyle).build());
+//            locationComponent.setLocationComponentEnabled(true);
+//            locationComponent.setCameraMode(CameraMode.TRACKING);
+//            locationComponent.setRenderMode(RenderMode.COMPASS);
+//            this.origin = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(), locationComponent.getLastKnownLocation().getLatitude());
+//            getRoute(origin, destination);
 
         }else{
             permissionsManager = new PermissionsManager(MapLocation.this);
@@ -208,6 +215,45 @@ public class MapLocation extends AppCompatActivity implements OnMapReadyCallback
             }
         }
     }
+
+//    private void getRoute(Point origin, Point destination)
+//    {
+//        NavigationRoute.builder(getApplicationContext())
+//                .accessToken(Mapbox.getAccessToken()).origin(origin).destination(destination).build()
+//                .getRoute(new Callback<DirectionsResponse>()
+//                {
+//                    @Override
+//                    public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response)
+//                    {
+//                        if(response.body() == null)
+//                        {
+//                            Toast.makeText(getApplicationContext(), "No Route Found, Check Right User And Access Token", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
+//                        else if(response.body().routes().size()==0)
+//                        {
+//                            Toast.makeText(getApplicationContext(), "No Route Found", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
+//                        route = response.body().routes().get(0);
+//                        if(navigationMapRoute != null)
+//                        {
+//                            navigationMapRoute.removeRoute();
+//                        }
+//                        else
+//                        {
+//                            navigationMapRoute = new NavigationMapRoute(null, mapView,mapboxMap );
+//                        }
+//                        navigationMapRoute.addRoute(route);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<DirectionsResponse> call, Throwable throwable)
+//                    {
+//                        Toast.makeText(getApplicationContext(), "Error:" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//    }
 
     @Override
     protected void onStart() {

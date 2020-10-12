@@ -67,7 +67,7 @@ public class ViewModel extends BaseObservable {
         return user.getBerat();
     }
 
-    public void setUserBerat(int berat) {
+    public void setUserBerat(Double berat) {
         user.setBerat(berat);
         notifyPropertyChanged(BR.berat);
     }

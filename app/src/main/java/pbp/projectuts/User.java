@@ -4,6 +4,7 @@ import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -39,6 +40,7 @@ public class User extends BaseObservable implements Serializable {
     @ColumnInfo(name = "status")
     public String status;
 
+    @Ignore
     public User() { }
 
     public User(String nama, String telp, int harga, double berat,

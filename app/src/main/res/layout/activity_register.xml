@@ -101,24 +101,25 @@
                 android:text="@={vm.UserTglAmbil}"
                 android:hint="dd/MM/yyyy"
                 android:layout_marginBottom="10dp"/>
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="@string/addfoto"
-                android:onClick="@{activity::btnFoto}"
-                android:textSize="8dp"/>
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="90dp"
-                android:text="@string/opsional"/>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="90dp"-->
+<!--                android:text="@string/addfoto"-->
+<!--                android:onClick="@{activity::btnFoto}"-->
+<!--                android:textSize="8dp"/>-->
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="90dp"-->
+<!--                android:text="@string/opsional"/>-->
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="80dp"
                 android:text="@string/btnSave"
+                android:id="@+id/btnSave"
                 android:onClick="@{activity::btnSave}"/>
 
         </LinearLayout>

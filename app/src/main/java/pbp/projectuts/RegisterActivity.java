@@ -2,7 +2,6 @@ package pbp.projectuts;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +16,7 @@ public class RegisterActivity extends AppCompatActivity {
     User user;
     ViewModel viewModel;
     ActivityRegisterBinding binding;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+//    static final int REQUEST_IMAGE_CAPTURE = 1;
 //    private FirebaseAuth auth;                buat firebase
 //    private String CHANNEL_ID="Channel 1";    buat firebase
 
@@ -46,18 +45,18 @@ public class RegisterActivity extends AppCompatActivity {
 //        }
 //    };
 
-    //Mengambil foto
-    public void btnFoto(View view){
-        dispatchTakePictureIntent();
-    }
-
-    //Fungsi untuk take picture
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
+//    //Mengambil foto
+//    public void btnFoto(View view){
+//        dispatchTakePictureIntent();
+//    }
+//
+//    //Fungsi untuk take picture
+//    private void dispatchTakePictureIntent() {
+//        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+//        }
+//    }
 
 
     public void btnSave(View view) {

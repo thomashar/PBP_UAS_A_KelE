@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
         android:text="@string/title" />
 
     <ImageView
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:shadowColor="#555555"
         android:text="@string/signin"
         app:backgroundTint="#E17945" />
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/status"
         app:backgroundTint="#E17945" />
 
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/location"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:text="@string/location"
         app:backgroundTint="#E17945" />
 

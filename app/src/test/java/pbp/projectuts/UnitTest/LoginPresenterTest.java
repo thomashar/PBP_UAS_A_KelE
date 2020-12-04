@@ -25,7 +25,7 @@ public class LoginPresenterTest {
     @Test
     public void shouldShowErrorMessageWhenEmailIsEmpty() throws Exception {
         when(view.getEmail()).thenReturn("");
-        System.out.println("enail : "+view.getEmail());
+        System.out.println("email : "+view.getEmail());
         presenter.onLoginClicked();
         verify(view).showEmailError("Email Tidak Boleh Kosong");
     }
@@ -57,7 +57,7 @@ public class LoginPresenterTest {
             Exception {
         when(view.getEmail()).thenReturn("thomasharyowibisono84@gmail.com");
         System.out.println("email : "+view.getEmail());
-        when(view.getPassword()).thenReturn("admins");
+        when(view.getPassword()).thenReturn("password");
         System.out.println("password : "+view.getPassword());
         when(service.getValid(view, view.getEmail(),
                 view.getPassword())).thenReturn(false);

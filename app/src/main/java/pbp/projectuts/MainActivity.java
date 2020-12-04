@@ -30,7 +30,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 //  kelas buat halaman login
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
     User user;
     ActivityMainBinding binding;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnSignin(View view) {
-        Intent detailActivity = new Intent(MainActivity.this, RegisterActivity.class);
+        Intent detailActivity = new Intent(MainActivity.this, LoginActivity.class);
 
         Gson gson = new Gson();
         String strMhs = gson.toJson(user);

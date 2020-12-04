@@ -1,4 +1,4 @@
-package pbp.projectuts;
+package pbp.projectuts.UnitTest;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +21,9 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import pbp.projectuts.MainActivity;
+import pbp.projectuts.R;
+
 import static android.os.Build.VERSION_CODES.O;
 
 public class LoginActivity extends AppCompatActivity {
@@ -29,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     private MaterialButton loginButton;
     private FirebaseAuth auth;
     private String getEmail, getPassword;
-    private TextView registerLink;
     private String CHANNEL_ID = "Channel 1";
 
     @Override
@@ -42,23 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.login_password);
         //init material button
         loginButton = findViewById(R.id.login_button);
-        //init register link
-        registerLink = findViewById(R.id.register_link);
+
 
         //init firebase authentication
         auth = FirebaseAuth.getInstance();
 
         //editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-        //dari login ke register
-        registerLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(i);
-                finish();
-            }
-        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         builder.setContentText("Selamat Datang di Aplikasi kami.");
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        Intent notificationIntent = new Intent(this,MainActivity.class);
+        Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this,0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
 

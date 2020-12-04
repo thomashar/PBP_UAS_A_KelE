@@ -11,18 +11,16 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.gson.Gson;
 
+import pbp.projectuts.UnitTest.LoginActivity;
 import pbp.projectuts.databinding.ActivityMainBinding;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
-import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -30,11 +31,24 @@ public class DetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private UserRecyclerViewAdapter adapter;
     private SwipeRefreshLayout refreshLayout;
+    private FloatingActionButton fabAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail); // isi layout nanti buat pas tampilin data pelanggan
+        //init register link
+        fabAdd = findViewById(R.id.fabAdd);
+
+        //dari login ke register
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DetailActivity.this, RegisterActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         recyclerView();
         refreshView();

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,12 +24,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import pbp.projectuts.MainActivity;
 import pbp.projectuts.R;
+import pbp.projectuts.RegisterActivity2;
 
 import static android.os.Build.VERSION_CODES.O;
 
 public class LoginActivity extends AppCompatActivity {
     private TextInputEditText editEmail, editPassword;
     private MaterialButton loginButton;
+    private TextView signupButton;
     private FirebaseAuth auth;
     private String getEmail, getPassword;
     private String CHANNEL_ID = "Channel 1";
@@ -43,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.login_password);
         //init material button
         loginButton = findViewById(R.id.login_button);
+        signupButton = findViewById(R.id.SignUp_button);
 
 
         //init firebase authentication
@@ -55,6 +59,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 loginUserAccount();
                 addNotification();
+            }
+        });
+
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity2.class));
             }
         });
 

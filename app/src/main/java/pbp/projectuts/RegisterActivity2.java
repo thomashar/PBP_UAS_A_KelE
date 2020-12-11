@@ -80,12 +80,27 @@ public class RegisterActivity2 extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                                     if (!task.isSuccessful()) {
-                                        CustomToast.createToast(RegisterActivity2.this,
+                                        Toast.makeText(RegisterActivity2.this,
                                                 "SignUp Unsuccessful, Plaese Try Again!"
-                                                        + task.getException().getMessage(), true);
+                                                        + task.getException().getMessage(),Toast.LENGTH_LONG).show();
                                     } else {
-                                        CustomToast.createToast(RegisterActivity2.this,
-                                                "SignUp Successful", true);
+
+                                        mFirebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>(){
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()) {
+                                                    Toast.makeText(RegisterActivity2.this, "SignUp Successful. Please check your email for verification",
+                                                            Toast.LENGTH_LONG).show();
+                                                    emailId.setText("");
+                                                    password.setText("");
+                                                    startActivity(new Intent(RegisterActivity2.this, LoginActivity.class));
+                                                    finish();
+                                                }else{
+                                                    Toast.makeText(RegisterActivity2.this, task.getException().getMessage(),
+                                                            Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
                                         UserDetail userDetail = new UserDetail(fName, lName, add);
                                         String uid = task.getResult().getUser().getUid();
                                         firebaseDatabase.getReference(uid).setValue(userDetail)

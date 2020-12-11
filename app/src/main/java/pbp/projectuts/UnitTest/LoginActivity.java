@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private MaterialButton loginButton;
     private TextView signupButton;
     private FirebaseAuth auth;
+    FirebaseAuth mFirebaseAuth;
     private String getEmail, getPassword;
     private String CHANNEL_ID = "Channel 1";
 
@@ -110,10 +111,15 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             //Check if email verified
 //                            if (auth.getCurrentUser().isEmailVerified()){
+                            if(auth.getCurrentUser().isEmailVerified()){
                                 createNotification();
                                 Toast.makeText(LoginActivity.this, "Login Successfull", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
+                            }else{
+                                Toast.makeText(LoginActivity.this, "Please verify your email address",
+                                        Toast.LENGTH_SHORT).show();
+                            }
 //                            }else {
 //                                Toast.makeText(LoginActivity.this, "Please verify your email!", Toast.LENGTH_SHORT).show();
 //                            }
